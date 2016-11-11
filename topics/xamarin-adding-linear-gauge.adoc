@@ -1,0 +1,245 @@
+﻿////
+
+|metadata|
+{
+    "name": "xamarin-adding-linear-gauge",
+    "controlName": ["{LinearGaugeName}"],
+    "tags": [],
+    "guid": "48b03f2f-de6f-4fa3-b0ed-b6e9d0bf0722",  
+    "buildFlags": ["xamarin"],
+    "createdOn": "2015-01-21T21:35:37.405694Z"
+}
+|metadata|
+////
+
+= Adding {LinearGaugeName}
+
+== Topic Overview
+
+=== Purpose
+
+This topic explains using a code example how to add the  _{LinearGaugeName}_™ control to {PlatformName} applications.
+
+=== In this topic
+
+This topic contains the following sections:
+
+* <<Adding,Adding  _{LinearGaugeName}_   to the {PlatformName} application>>
+
+** <<Introduction,Introduction>>
+** <<Preview,Preview>>
+** <<Prerequisites,Prerequisites>>
+** <<Overview,Overview>>
+** <<Steps,Steps>>
+
+* <<RelatedContent,Related Content>>
+
+[[Adding]]
+== Adding  _{LinearGaugeName}_   to the {PlatformName} application
+
+[[Introduction]]
+
+=== Introduction
+
+The following procedure demonstrates adding the  _{LinearGaugeName}_   to {PlatformName} applications.
+
+[[Preview]]
+
+=== Preview
+
+The following is a screenshot of the  _{LinearGaugeName}_  .
+
+image::images/XamLinearGauge_Adding_1.png[]
+
+[[Prerequisites]]
+
+=== Prerequisites
+
+To complete the procedure, you need the following:
+
+* Created a project as outlined in the following topic, link:xamarin-project-with-infragistics-controls.html[Creating a Project Using Infragistics Xamarin Controls]
+
+[[Overview]]
+
+=== Overview
+
+Following is a conceptual overview of the process:*1. Adding the {LinearGaugeName} control to {PlatformName} applications*
+
+*2. Verifying the results*
+
+[[Steps]]
+
+=== Steps
+
+The following procedure takes you through the steps necessary for adding the  _{LinearGaugeName}_  control to a page.
+
+=== 1. Add the {LinearGaugeName} control to the page.
+
+[start=1]
+. Right click the TestProject project, select Add=>New Item...
+[start=2]
+. Select Forms Xaml Page, enter TestLinearGaugePage as the name and click Add
+[start=3]
+. Open the file and enter the following code snippet
+
+ifdef::xaml[]
+
+*In XAML:*
+
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TestLinearGaugeApp.TestLinearGaugePage"
+    xmlns:ig="clr-namespace:Infragistics.XF.Controls;assembly=InfragisticsXF.Controls.Gauges" >
+   <ig:XFLinearGauge Grid.Row="3"
+                    MinimumValue="5"
+                    MaximumValue="55"
+                    Value="43">
+      <ig:XFLinearGauge.Ranges>
+         <ig:LinearGraphRange StartValue="5"
+                            EndValue="15"
+                            Brush="Red" />
+         <ig:LinearGraphRange StartValue="15"
+                            EndValue="30"
+                            Brush="Yellow" />
+         <ig:LinearGraphRange StartValue="30"
+                            EndValue="55"
+                            Brush="Green"/>
+      </ig:XFLinearGauge.Ranges>
+   </ig:XFLinearGauge>
+</ContentPage>
+----
+
+endif::xaml[]
+
+[start=4]
+. Open the App.cs file and update the GetMainPage with the following code:
+
+*In C#:*
+
+----
+public static Page GetMainPage()
+{
+   return new TestLinearGaugePage();
+}
+----
+
+=== 2. Verify the results.
+
+Build your project. Select one of the platform's project as the startup project and select run. If you have implemented the steps correctly, the displayed {LinearGaugeName} should look like the one in the Preview section above.
+
+[[_Ref348111483]]
+
+[[RelatedContent]]
+
+== Related Content
+
+=== Topics
+
+The following topics provide additional information related to this topic:
+
+[options="header", cols="a,a"]
+|====
+|Topic|Purpose
+
+| link:radialgauge-getting-started-with-radialgauge.html[Adding {LinearGaugeName}]
+|This topic explains using a code example how to add the _{LinearGaugeName}_™ control to a {PlatformName} application.
+
+| link:radialgauge-configuring-the-backing.html[Configuring the Background ({LinearGaugeName})]
+|This topic provides a conceptual overview of the _{LinearGaugeName}_™ control’s backing feature. It describes the properties of the backing area and provides an example of its implementation.
+
+| link:radialgauge-configuring-labels.html[Configuring Labels ({LinearGaugeName})]
+|This topic provides a conceptual overview of labels with the {LinearGaugeName}™ control. It describes the properties of the labels and also provides an example of how to configure the labels.
+
+| link:radialgauge-configuring-needles.html[Configuring Needles ({LinearGaugeName})]
+|This topic provides a conceptual overview of needles with the {LinearGaugeName}™ control. It describes the properties of the needles and also provides an example of how to configure them.
+
+| link:radialgauge-configuring-ranges.html[Configuring Ranges ({LinearGaugeName})]
+|This topic provides a conceptual overview of the {LinearGaugeName}™ control’s ranges. It describes the properties of the ranges and provides an example of how to add ranges to the radial gauge.
+
+| link:radialgauge-configuring-the-scale.html[Configuring the Scale ({LinearGaugeName})]
+|This topic provides a conceptual overview of the {LinearGaugeName}™ control’s scale. It describes the properties of the scale and also provides an example of how to implement it.
+
+| link:radialgauge-configuring-tick-marks.html[Configuring the Tick Marks ({LinearGaugeName})]
+|This topic provides a conceptual overview of tick marks with the {LinearGaugeName}™ control. It describes the tick marks’ properties and provides an example of how to implement them.
+
+|====
+
+ifdef::sl[]
+
+=== Samples
+
+ifdef::sl,wpf[]
+The following samples provide additional information related to this topic.
+endif::sl,wpf[]
+
+[options="header", cols="a,a"]
+|====
+|pick:[sl.wpf="Sample"] |pick:[sl.wpf="Purpose"] 
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/bind-to-live-data[Bind to Live Data]"]
+|
+ifdef::sl,wpf[] 
+
+In this sample, the gauge’s needle value is bound to live data and updated once every five seconds in the Tick event handler of a Timer. 
+
+endif::sl,wpf[]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/events[Events]"]
+|
+ifdef::sl,wpf[] 
+
+This sample demonstrates the Radial Gauge control’s events. You can watch the events in the Events Log below. 
+
+endif::sl,wpf[]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/gauge-animation[Gauge Animation]"]
+|pick:[sl,wpf="This sample demonstrates how you can easily animate the Radial Gauge by setting the"] pick:[sl,wpf=" link:{LinearGaugeLink}.{LinearGaugeName}~transitionduration.html[TransitionDuration]"] pick:[sl,wpf="property."]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/gauge-needle[Gauge Needle]"]
+|
+ifdef::sl,wpf[] 
+
+Displayed as a pointer, the Needle indicates a single value on a scale. The options pane below allows you to interact with the Radial Gauge control’s Needle. 
+
+endif::sl,wpf[]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/label-settings[Label Settings]"]
+|pick:[sl,wpf="This sample demonstrates how to configure the Radial Gauge control’s Label settings. Use the slider to see how the"] pick:[sl,wpf=" link:{LinearGaugeLink}.{LinearGaugeName}~labelinterval.html[LabelInterval]"] pick:[sl,wpf="and"] pick:[sl,wpf=" link:{LinearGaugeLink}.{LinearGaugeName}~labelextent.html[LabelExtent]"] pick:[sl,wpf="properties affect the Label."]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/needle-dragging[Needle Dragging]"]
+|
+ifdef::sl,wpf[] 
+
+This sample demonstrates how you can drag the Radial Gauge control’s needle by using the Mouse events. 
+
+endif::sl,wpf[]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/range[Range]"]
+|
+ifdef::sl,wpf[] 
+
+A range is a visual element that highlights a specified range of values on a scale. Use the options pane below to set the Radial Gauge control’s Range properties. 
+
+endif::sl,wpf[]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/scale-settings[Scale Settings]"]
+|
+ifdef::sl,wpf[] 
+
+A scale defines a range of values in the Radial Gauge. Use the options pane below to set the Radial Gauge control’s Scale properties. 
+
+endif::sl,wpf[]
+
+|pick:[sl,wpf=" link:{SamplesURL}/radial-gauge/#/tickmarks[Tick Marks]"]
+|
+ifdef::sl,wpf[] 
+
+Tick marks can be displayed at every user specified interval on a gauge. Use the options pane below to set the Radial Gauge control’s Tick Mark properties. 
+
+endif::sl,wpf[]
+
+|====
+
+endif::sl[]

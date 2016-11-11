@@ -1,0 +1,79 @@
+﻿////
+
+|metadata|
+{
+    "name": "lineargauge-known-issues-and-limitations",
+    "controlName": ["{LinearGaugeName}"],
+    "tags": ["Known Issues"],
+    "guid": "4023cc69-48bb-45e7-9b9c-411171b7778b",  
+    "buildFlags": [],
+    "createdOn": "2014-06-05T19:53:12.0668951Z"
+}
+|metadata|
+////
+
+= Known Issues and Limitations ({LinearGaugeName})
+
+== Known Issues and Limitations
+
+=== Overview
+
+The following table summarizes the known issues and limitations of the  _{LinearGaugeName}_   control. Detailed explanations of known issues and the possible workarounds are provided for some of the issues in the following summary table.
+
+==== Legend:
+
+[cols="a,a"]
+|====
+|image::images/Known_Issues_and_Limitations_Solution.png[]
+|Workaround available
+
+|image::images/Known_Issues_and_Limitations_NoSolution.png[]
+|No known workaround
+
+|image::images/Known_Issues_and_Limitations_FixPlanned.png[]
+|Fix planned
+
+|====
+
+==== <<_Ref367479792, _{LinearGaugeName}_  >>
+
+[options="header", cols="a,a,a"]
+|====
+|Issue|Description|Status
+
+|<<_singleNeedle,Only needle supported>>
+|The _{LinearGaugeName}_ control supports only one needle.
+|image::images/Known_Issues_and_Limitations_Solution.png[]
+
+|<<_NoLabelsCollision,No label collisions detection>>
+|The _{LinearGaugeName}_ control does not provide means for detecting label collisions. As a result, when the space to visualize the labels is not sufficient, label collisions may occur.
+|image::images/Known_Issues_and_Limitations_Solution.png[]
+
+|====
+
+[[_Ref367479792]]
+== _{LinearGaugeName}_
+
+[[_singleNeedle]]
+
+=== Only one needle supported
+
+The  _{LinearGaugeName}_   control supports only one needle.
+
+.Workaround
+[NOTE]
+====
+The effect of displaying multiple needles can be achieved by overlaying several instances of the control.
+====
+
+[[_NoLabelsCollision]]
+
+=== No label collisions detection
+
+The  _{LinearGaugeName}_   control does not provide means for detecting label collisions. As a result, when the space to visualize the labels is not sufficient, label collisions may occur.
+
+.Workaround
+[NOTE]
+====
+Make sure that in the container of the control there is sufficient space to display the labels properly.
+====
