@@ -78,7 +78,7 @@ Following are the general requirements for adding the  _{LinearGaugeName}_   con
 |Assembly references
 |
 
-* {ApiPlatform}v{ProductVersion}.dll 
+* {ApiPlatform}{ApiVersion}.dll 
 
 ifdef::sl,wpf,win-universal[] 
 
